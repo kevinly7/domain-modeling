@@ -117,7 +117,20 @@ print("The Moore family household income is: $\(mooreFamily.householdIncome())")
 print("The Smith family household income is: $\(smithFamily.householdIncome())")
 mooreFamily.haveChild("Luke", lastName: "Moore")
 smithFamily.haveChild("Sam", lastName: "Smith")
+print("")
 
+print("--The Moore Famnily List--")
+for person in mooreFamily.members {
+    person.toString()
+    print("")
+}
+print("")
+
+print("--The Smith Famnily List--")
+for person in smithFamily.members {
+    person.toString()
+    print("")
+}
 
 
 
