@@ -8,10 +8,17 @@
 
 import Foundation
 
-class Job {
+class Job: CustomStringConvertible {
     let title: String
     var salary: Double
     var hourly = false
+    var description: String {
+        if (hourly) {
+            return title + ": " + String(salary) + "/hour"
+        } else {
+            return title + ": " + String(salary) + "/year"
+        }
+    }
     
     init(title: String, salary: Double) {
         self.title = title

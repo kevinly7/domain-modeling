@@ -8,12 +8,27 @@
 
 import Foundation
 
-class Person {
+class Person: CustomStringConvertible {
     var firstName: String
     var lastName: String
     var age: Int
     var job: Job?
     var spouse: Person?
+    var description: String {
+        var output: String = ""
+        output += "First Name: \(firstName)\n" + "Last Name:  \(lastName)\n" + "Age:        \(age)\n"
+        if (job ==  nil) {
+            output += "Job:        \((job?.title))\n"
+        } else {
+            output += "Job:        \((job?.title)!)\n"
+        }
+        if (spouse == nil) {
+            output += "Spouse:     \((spouse?.firstName))"
+        } else {
+            output += "Spouse:     \((spouse?.firstName)!)"
+        }
+        return output
+    }
     
     init(firstName: String, lastName: String, age: Int, var job: Job?, var spouse: Person?) {
         if age < 16 {

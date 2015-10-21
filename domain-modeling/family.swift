@@ -8,8 +8,15 @@
 
 import Foundation
 
-class Family {
+class Family: CustomStringConvertible {
     var members = [Person]()
+    var description: String {
+        var output: String = "The members of this family include: "
+        for person in members {
+             output += person.firstName + " "
+        }
+        return output
+    }
     
     init(members: [Person]) {
         var legal = false
